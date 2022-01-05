@@ -11,7 +11,6 @@ import ReactLoading from "react-loading";
 import { ParseSolutions, ToTrueValues } from "../utils/DataHandling";
 import { HorizontalBars, ParallelAxes } from "desdeo-components";
 import SolutionTable from "../components/SolutionTable";
-import {PhysicalInterface} from "../physical_interface/Interface";
 
 interface ReferencePointMethodProps {
   isLoggedIn: boolean;
@@ -461,7 +460,6 @@ function ReferencePointMethod({
           </Button>
         </>
       )}
-      {!showFinal && fetchedInfo && <PhysicalInterface problem={activeProblemInfo}></PhysicalInterface>}
     </Container>
   );
 }

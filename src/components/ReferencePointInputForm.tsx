@@ -76,6 +76,7 @@ function ReferencePointInputForm({
                                         <Col>
                                             <Form.Control
                                                 key={`controlof${name}`}
+                                                id = {`${name}`}
                                                 name={`values.${i}`}
                                                 defaultValue={`${directions[i] === 1
                                                     ? referencePoint[i].toPrecision(4)
@@ -123,7 +124,7 @@ function ReferencePointInputForm({
                         })}
                     </Form.Group>
                 </ListGroup.Item>
-                <Button type="submit">Set</Button>
+                <Button type="submit" id="set">Set</Button>
             </ListGroup>
         </Form>
     );

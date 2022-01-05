@@ -80,6 +80,7 @@ function InputForm({
                                         <Col>
                                             <Form.Control
                                                 key={`controlof${name}`}
+                                                id = {`${name}`}
                                                 name={`values.${i}`}
                                                 defaultValue={`${referencePoint[i].toPrecision(5)}`}
                                                 ref={register({
