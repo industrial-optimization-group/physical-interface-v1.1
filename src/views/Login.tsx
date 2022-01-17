@@ -10,6 +10,8 @@ import {
   Container,
   Row,
   Col,
+  Popover,
+  OverlayTrigger,
 } from "react-bootstrap";
 
 interface FormData {
@@ -54,6 +56,16 @@ export const Login = ({
     }
   };
 
+  const popover = (
+    <Popover id="popover-basic">
+      <Popover.Header as="h3">Don't have credentials yet?</Popover.Header>
+      <Popover.Body>
+        Registration is currently not available and credentials must be
+        requested by sending an email to xxx@yyy.zz.
+      </Popover.Body>
+    </Popover>
+  );
+
   return (
     <>
       {!loginOk && (
@@ -76,24 +88,39 @@ export const Login = ({
                     type="username"
                     placeholder="username"
                     name="username"
-                    ref={register({ required: { value: true, message: "Username is required." } })}
-                    isInvalid={errors.username !== undefined}
+                    ref={register({ required: true })}
                   />
-                  {errors.username &&
-                    <Form.Control.Feedback type="invalid">{`${errors.username.message}`}</Form.Control.Feedback>}
+                  {errors.username && "Username is required!"}
                   <Form.Label>Password</Form.Label>
                   <Form.Control
                     type="password"
                     placeholder="password"
                     name="password"
-                    ref={register({ required: { value: true, message: "Password is required." } })}
-                    isInvalid={errors.password !== undefined}
+                    ref={register({ required: true })}
                   />
-                  {errors.password &&
-                    <Form.Control.Feedback type="invalid">{`${errors.password.message}`}</Form.Control.Feedback>}
                 </Form.Group>
                 <Button className="mt-1" type="submit">Submit</Button>
               </Form>
+              <OverlayTrigger
+                trigger="click"
+                placement="bottom"
+                overlay={popover}
+                // Transition false to hide the warning: Warning: findDOMNode is deprecated in StrictMode.
+                // this is also why the functional form of OverlayTrigger is used.
+                transition={false}
+              >
+                {({ ref, ...triggerHandler }) => (
+                  <Button
+                    className="mt-1"
+                    variant="secondary"
+                    {...triggerHandler}
+                    ref={ref}
+                    size="sm"
+                  >
+                    Help
+                  </Button>
+                )}
+              </OverlayTrigger>
             </Col>
           </Row>
         </Container>
