@@ -16,7 +16,8 @@ function Comp(props) {
     let roles = type === 'B' ? [
         "Assign role",
         "iterate",
-        "confirm"
+        "confirm",
+        "stop"
     ] : ["Assign role", ...props.objectiveNames, "scroll solutions"];
 
     /**
