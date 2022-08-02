@@ -59,7 +59,7 @@ The rule file can be found in the chrome_rules folder.
 ## Usage
 
 ### Harware Setup
-First the modules should be arranged as per the decision maker's choice. After the arrangement in complete, simply connect any of the modules USB port to the computer via a USB2.0 cable (micro B type). All the LED indicators on the modules should glow red denoting all are powered up. In case the USB port is unable to supply required current, connect the 5V power supply to the power port availble on the modules.
+First the modules should be arranged as per the decision maker's choice. After the arrangement in complete, simply connect any of the modules USB port to the computer via a USB 2.0 cable (micro B type). All the LED indicators on the modules should glow red denoting all are powered up. In case the USB port is unable to supply required current, connect the 5V power supply to the power port availble on the modules.
 
 ### Frontend Usage
 
@@ -75,7 +75,7 @@ After logging in, the navigation bar will update with menus to access various fe
 
 Currently, only a dummy problem can be defined through the interface. However, the intractive methods support
 solving problems with both analytical formualtions and/or discrete formulations. Problems must currently be added
-manually to the databse in `desdeo-webapi`. See its documentation for additiona details. 
+manually to the database in `desdeo-webapi`. See its documentation for additiona details. 
 
 ## Supported interactive methods
 Currently interfaces for the following multiobjective optimization methods have been implemented:
@@ -83,6 +83,13 @@ Currently interfaces for the following multiobjective optimization methods have 
 ### IRVEA : Interactive RVEA
 
 Interactive RVEA is based on the following work. Kindly refer to the paper for more details about the algorithm.
+
+* Cheng, R., Jin, Y., Olhofer, M., Sendhoff, B.: A reference vector guided evolutionary algorithm for many-objective optimization. IEEE Transactions on Evolutionary Computation 20(5), 773–791 (2016)
+
+
+* Hakanen, J., Chugh, T., Sindhya, K., Jin, Y., Miettinen, K.: Connections of reference vectors and different types of preference information in interactive multiobjective evolutionary algorithms. In: Proceedings of the 2016 IEEE Symposium
+Series on Computational Intelligence (SSCI). pp. 1–8 (2016)
+
 
 You can solve the provided river pollution problem as of now.
 
@@ -95,9 +102,11 @@ After the modules has been connected to the computer a popup will appear showing
 * The visualization for the arrangment breaks when the number of modules is too high. Auto zooming should resolve this problem. 
 * The values of the reference point is set by activating the Set button repeatedly.
 * If modules are rearranged, it is not always detected and the visulization has to restarted from the login page.
-* Graphics of the modules could be improved. 
 
 # Future Works
+
+* Graphics of the modules could be improved. 
+* More algorithms, visualizations in objective and decision space, and problems should be added.
 
 
 # Contributors
@@ -105,5 +114,5 @@ After the modules has been connected to the computer a popup will appear showing
 Below are listed the major contributors to `desdeo-frontend`. If you feel you should be part of this list, make a PR.
 - [Giovanni Misitano](https://github.com/gialmisi) - **maintainer**
 - [Juuso Pajasmaa](https://github.com/jpajasmaa)
-- [Stefan]
-- [Atanu]
+- [Stefan](https://github.com/phoopies)
+- [Atanu](https://github.com/amrzr)
